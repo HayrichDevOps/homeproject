@@ -1,6 +1,6 @@
 pipeline{
 
-	agent {label 'linux'}
+	agent {label 'myfirstagent'}
 
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
@@ -18,7 +18,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t thetips4you/nodeapp_test:latest .'
+				sh 'docker build -t hayrich/nodeapp_test:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push thetips4you/nodeapp_test:latest'
+				sh 'docker push hayrich/nodeapp_test:latest'
 			}
 		}
 	}
