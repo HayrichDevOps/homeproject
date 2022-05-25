@@ -4,11 +4,11 @@ Prive projecten om mijn skills en kennis op te doen.
 
  Install Docker and Docker-Compose on Rocky Linux 8
 
-## Step 1) Install updates and reboot ##
+# Step 1) Install updates and reboot 
  $ sudo dnf update -y
  Restart /reboot server
 
-## Step 2) Configure Docker Package Repository & Install Docker##
+# Step 2) Configure Docker Package Repository & Install Docker
  $ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
  $ sudo dnf install -y docker-ce
 
