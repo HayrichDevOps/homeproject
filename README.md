@@ -4,7 +4,7 @@ Prive projecten om mijn skills en kennis op te doen.
 
  Install Docker and Docker-Compose on Rocky Linux 8
 
-# Step 1) Install updates and reboot 
+### Step 1) Install updates and reboot 
  $ sudo dnf update -y
  Restart /reboot server
 
@@ -25,7 +25,7 @@ $ sudo systemctl status docker
 ## If you wish local user to mange and run docker commands, then add the user to docker group using beneath command.#
 $ sudo usermod -aG docker $USER
 
-## CHECK DOCKER VERSION##
+## CHECK DOCKER VERSION
 $ docker --version
 
 ## STEP 4) TEST DOCKER INSTALLATION##
