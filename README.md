@@ -1,35 +1,45 @@
 # homeproject
-Prive projecten om mijn skills en kennis op te doen.
+    Prive projecten om mijn skills en kennis op te doen.
 
 
- Install Docker and Docker-Compose on Rocky Linux 8
+    Install Docker and Docker-Compose on Rocky Linux 8 from the repository
 
-### Step 1) Install updates and reboot.
- $ sudo dnf update -y
- Restart /reboot server
+ 1.  ### Set up the repository.
+''''
+    $ sudo yum install -y yum-utils
+ 
+ 
+    $ sudo yum-config-manager \
+       --add-repo \
+       https://download.docker.com/linux/centos/docker-ce.repo
+ '''
 
-### Step 2) Configure Docker Package Repository & Install Docker.
- $ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
- $ sudo dnf install -y docker-ce
+   ### Step 2) Configure Docker Package Repository & Install Docker.
+''''
+    $ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+    $ sudo dnf install -y docker-ce
+ '''
 
-### In case you are getting container.io error while installing docker-ce package then run following command.
-$ sudo dnf install docker-ce --allowerasing -y
+   ### STEP3) Install Docker Engine
+'''
+   $ sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+'''
+   #####If prompted to accept the GPG key, verify that the fingerprint matches 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35, and if so, accept it.
+   ##### This command installs Docker, but it doesn’t start Docker. It also creates a docker group, however, it doesn’t add any users to the group by default.
 
-### STEP3) Start enable docker service.
-$ sudo systemctl start docker
-$ sudo systemctl enable docker
+   ### To verify the status of docker.
+'''
+   $ sudo systemctl status docker 
+'''
 
-### To verify the status of docker.
-$ sudo systemctl status docker 
+   ### If you wish local user to mange and run docker commands, then add the user to docker group using beneath command.
+   $ sudo usermod -aG docker $USER
 
-### If you wish local user to mange and run docker commands, then add the user to docker group using beneath command.
-$ sudo usermod -aG docker $USER
+2. ### Check docker version
+   $ docker --version
 
-### Check docker version
-$ docker --version
-
-### STEP 4) Test docker installation
-$ docker run hello-world
+   ### STEP 4) Test docker installation
+   $ docker run hello-world
 
 ### STEP 5) Install docker-compose.
 $ dnf install -y curl
