@@ -2,7 +2,7 @@
 Prive projecten om mijn skills en kennis op te doen.
 Install Docker and Docker-Compose on Rocky Linux 8 from the repository
 
- 1.### Set up the repository.
+ 1.Set up the repository.
     
     
     $ sudo yum install -y yum-utils
